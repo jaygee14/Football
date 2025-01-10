@@ -43,6 +43,12 @@ nav {
   grid-area: 1 / 1 / 1 / span 4;
   width: 100%;
 }
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+}
 
 nav a:hover {
   color: yellow;
@@ -158,7 +164,7 @@ video:hover {
   margin-inline: 30px;
 }
 
-.sidebar {
+.power {
   grid-area: 2 / 1 / span 14 / 1;
   background-color: rgb(252, 255, 58);
   display: flex;
