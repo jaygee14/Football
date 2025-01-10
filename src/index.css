@@ -1,13 +1,259 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* @font-face {
+  font-family: 'Delta Gothic';
+  src: url('./fonts/Dela_Gothic_One/DelaGothicOne-Regular.ttf') format('truetype');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Bree';
+  src: url('./fonts/Bree_Serif/BreeSerif-Regular.ttf') format('truetype');
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+h2,
+h3,
+h4,
+p {
+  font-family: 'Bree';
+}
+
+main {
+  width: 100%;
+  display: grid;
+  grid-template: 60px repeat(2, 1fr) / 1fr 4fr;
+  row-gap: 100px;
+}
+
+.top-right {
+  display: flex;
+  height: 100px;
+}
+
+h1 {
+  font-family: 'Delta Gothic', sans-serif;
+}
+
+
+nav {
+  background-color: rgb(29, 237, 240);
+  display: flex;
+  justify-content: space-between;
+  grid-area: 1 / 1 / 1 / span 4;
+  width: 100%;
+}
+
+nav a:hover {
+  color: yellow;
+  transition: all 350ms ease-in-out;
+}
+
+.hamburger_nav {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+header {
+  grid-area: 2 / 2 / 2 / span 1;
+  margin: 12px 30px;
+}
+
+header img {
+  width: 75px;
+  height: 50px;
+  margin: 2px;
+}
+
+#scoreBoard {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 3px solid rgb(29, 237, 240);
+
+  transition: 400ms background-color ease-in-out 50ms;
+}
+
+.game:hover {
+  background-color: rgb(29, 237, 240);
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  height: 20px;
+}
+
+.top-stories {
+  grid-area: 3 / 2 / span 1 / span 2;
+  margin: 0 3%;
+}
+
+img:hover {
+  width: width * 2;
+}
+
+.top-plays {
+  grid-area: 4 / 2 / span 1 / span 2;
+  margin: 0px 3%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+  border: 3px solid rgb(29, 237, 240);
+  margin-right: 50px;
+  width: 100%;
+}
+
+iframe {
+  max-width: 450px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+
+video:hover {
+  cursor: pointer;
+}
+
+.bar {
+  color: rgb(255, 255, 255);
+  font-size: 33px;
+  margin: 5px 10px;
+}
+
+.box>img {
+  min-width: 80px;
+  max-width: 170px;
+  height: 200px;
+  flex-shrink: 1;
+}
+
+.box {
+  text-align: center;
+  min-width: 80px;
+  margin-top: 24px;
+  width: 33%;
+}
+
+.box h4 {
+  margin-inline: 30px;
+}
+
+.sidebar {
+  grid-area: 2 / 1 / span 14 / 1;
+  background-color: rgb(252, 255, 58);
+  display: flex;
+  flex-direction: column;
+  margin: 12px 0px;
+}
+
+.underline {
+  text-align: center;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+
+
+@media only screen and (max-width: 840px) {
+  .sidebar {
+    display: none;
+  }
+
+  header {
+    grid-area: 2 / 1 / 2 / span 3;
+    margin: 12px 30px;
+  }
+
+  nav {
+    justify-content: end;
+  }
+
+  .hamburger_nav {
+    display: none;
+    background-color: rgb(29, 237, 240);
+    color: rgb(255, 255, 255);
+    grid-area: 2 / 3 / span 1 / span 3;
+    width: 200px;
+    height: 600px;
+    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+    align-self: end;
+  }
+
+  .hamburger_nav .bar {
+    display: block;
+    height: 100%;
+  }
+
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .container {
+    display: block;
+    overflow-x: scroll;
+    width: 100%;
+  }
+
+  .box {
+    max-width: 200px;
+  }
+
+  h2 {
+    margin-top: 15px;
+  }
+
+  .bar {
+    font-size: 22px;
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  form {
+    display: none;
+  }
+
+  .hamburger:hover {
+    cursor: pointer;
+    background-color: yellow;
+  }
+
+  .hamburger:active {
+    background-color: white;
+  }
+
+  .top-stories {
+    grid-area: 3 / 2 / span 1 / span 2;
+  }
+
 }
