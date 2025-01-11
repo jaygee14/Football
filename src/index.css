@@ -166,7 +166,7 @@ li {
     display: none;
   }
 
-  header {
+  .root {
     grid-area: 2 / 1 / 2 / span 3;
     margin: 12px 30px;
   }

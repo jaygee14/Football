@@ -2,8 +2,14 @@
 export default function Timer(props){
     return (
         <div className="timer">
-            <h3 id="period">{props.period}</h3>
-            <h3 id="clock">{ props.clock }</h3>
+            <section id="period">
+                <p>QTR</p>
+                <p>{ props.period }</p>
+            </section>
+            <section id="clock">
+                <p>Time</p>
+                <p>{ props.clock }</p>
+            </section>
         </div>
     )
 }
