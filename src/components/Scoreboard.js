@@ -1,4 +1,5 @@
-import Game from "./Game";
+import Timer from "./Timer";
+import Teams from "./Teams";
 import { useState, useEffect } from "react"
 export default function Scoreboard() {
     const [info, setInfo] = useState([]);
@@ -11,20 +12,23 @@ export default function Scoreboard() {
         
     }, []);
 
-    console.log(info);
-
 
     return (
-         <div id="scoreboard">
+         <div id="scoreBoard">
             {info.map((game, i) => {
                 const awayTeam = game.competitions[0].competitors[1];
                 const homeTeam = game.competitions[0].competitors[0];
+                const period = game.status.period;
+                const clock = game.status.displayClock;
                 if (!awayTeam || !homeTeam) {
                     console.warn('Missing data for game:', game);
                     return null;
                 }
                 return (
-                    <Game awayLogo={awayTeam.team.logo} awayScore={awayTeam.score} awayKey={`awayTeam_${i}`} homeLogo={ homeTeam.team.logo } homeScore={homeTeam.score} homeKey={`homeTeam_${i}`}></Game>
+                    <div className="game">
+                        <Teams awayLogo={awayTeam.team.logo} awayScore={awayTeam.score} awayKey={`awayTeam_${i}`} homeLogo={homeTeam.team.logo} homeScore={homeTeam.score} homeKey={`homeTeam_${i}`}></Teams>
+                        <Timer period={ period } clock={ clock }></Timer>
+                    </div>
                 );
             })}
          </div>

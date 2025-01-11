@@ -74,28 +74,6 @@ header img {
   margin: 2px;
 }
 
-#scoreBoard {
-  display: flex;
-  justify-content: space-between;
-  align-content: space-between;
-  flex-wrap: wrap;
-  width: 90%;
-}
-
-.game {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  border: 3px solid rgb(29, 237, 240);
-
-  transition: 400ms background-color ease-in-out 50ms;
-}
-
-.game:hover {
-  background-color: rgb(29, 237, 240);
-  cursor: pointer;
-}
-
 form {
   display: flex;
   height: 20px;
