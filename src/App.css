@@ -37,3 +37,14 @@
     background-color: rgb(29, 237, 240);
     cursor: pointer;
 }
+
+#final {
+    color: red;
+    text-align: center;
+    width: 100%;
+}
+
+#halftime {
+    text-align: center;
+    width: 100%;
+}
