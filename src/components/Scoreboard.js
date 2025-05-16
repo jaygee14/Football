@@ -20,6 +20,9 @@ export default function Scoreboard() {
                 const homeTeam = game.competitions[0].competitors[0];
                 const period = game.status.period;
                 const clock = game.status.displayClock;
+                const gameStatus = game.status.type.name
+                const gameTime = game.status.type.detail;
+
                 if (!awayTeam || !homeTeam) {
                     console.warn('Missing data for game:', game);
                     return null;
@@ -27,7 +30,7 @@ export default function Scoreboard() {
                 return (
                     <div className="game">
                         <Teams awayLogo={awayTeam.team.logo} awayScore={awayTeam.score} awayKey={`awayTeam_${i}`} homeLogo={homeTeam.team.logo} homeScore={homeTeam.score} homeKey={`homeTeam_${i}`}></Teams>
-                        <Timer period={ period } clock={ clock }></Timer>
+                        <Timer period={ period } clock={ clock } status={gameStatus} schedule={gameTime}></Timer>
                     </div>
                 );
             })}
