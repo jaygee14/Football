@@ -3,8 +3,9 @@
     justify-content: space-between;
     align-content: space-between;
     flex-wrap: wrap;
-    height: 500px;
+    /*height: 500px;*/
     width: 90%;
+    margin: 30px 10px;
 }
 
 .teams {
@@ -16,6 +17,7 @@
 .game{
     border: 3px solid rgb(29, 237, 240);
     transition: 400ms background-color ease-in-out 50ms;
+    margin: 10px 0px 10px 0px;
 }
 
 .timer {
